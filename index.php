@@ -72,6 +72,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Active Orders</h5>
                                 <h2 class="card-text">24</h2>
+                                <small>+3 from yesterday</small>
                             </div>
                         </div>
                     </div>
@@ -80,6 +81,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Production Rate</h5>
                                 <h2 class="card-text">85%</h2>
+                                <small>Target: 90%</small>
                             </div>
                         </div>
                     </div>
@@ -88,6 +90,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Inventory Items</h5>
                                 <h2 class="card-text">1,234</h2>
+                                <small>12 items low in stock</small>
                             </div>
                         </div>
                     </div>
@@ -96,6 +99,148 @@
                             <div class="card-body">
                                 <h5 class="card-title">Employees</h5>
                                 <h2 class="card-text">45</h2>
+                                <small>38 on shift</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Production Overview -->
+                <div class="row mb-4">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Production Overview</h5>
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-outline-secondary">Daily</button>
+                                    <button class="btn btn-sm btn-outline-secondary">Weekly</button>
+                                    <button class="btn btn-sm btn-outline-secondary">Monthly</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="productionChart" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Production Status</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label class="d-flex justify-content-between">
+                                        <span>Assembly Line 1</span>
+                                        <span>75%</span>
+                                    </label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="d-flex justify-content-between">
+                                        <span>Assembly Line 2</span>
+                                        <span>90%</span>
+                                    </label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="d-flex justify-content-between">
+                                        <span>Quality Control</span>
+                                        <span>60%</span>
+                                    </label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-warning" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inventory Alerts and Orders -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Low Stock Alerts</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Item</th>
+                                                <th>Current Stock</th>
+                                                <th>Min Required</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Steel Beams</td>
+                                                <td>50</td>
+                                                <td>100</td>
+                                                <td><span class="badge bg-danger">Critical</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Circuit Boards</td>
+                                                <td>75</td>
+                                                <td>150</td>
+                                                <td><span class="badge bg-warning">Low</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Aluminum Sheets</td>
+                                                <td>120</td>
+                                                <td>200</td>
+                                                <td><span class="badge bg-warning">Low</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Recent Orders</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Order ID</th>
+                                                <th>Customer</th>
+                                                <th>Due Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#ORD-2024-001</td>
+                                                <td>ABC Corp</td>
+                                                <td>2024-03-25</td>
+                                                <td><span class="badge bg-primary">In Production</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#ORD-2024-002</td>
+                                                <td>XYZ Ltd</td>
+                                                <td>2024-03-28</td>
+                                                <td><span class="badge bg-info">Scheduled</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#ORD-2024-003</td>
+                                                <td>Tech Solutions</td>
+                                                <td>2024-03-30</td>
+                                                <td><span class="badge bg-warning">Pending</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,5 +326,47 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Production Chart
+        const ctx = document.getElementById('productionChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Production Output',
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }, {
+                    label: 'Target',
+                    data: [70, 70, 70, 70, 70, 70, 70],
+                    fill: false,
+                    borderColor: 'rgb(255, 99, 132)',
+                    borderDash: [5, 5],
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Weekly Production Overview'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
